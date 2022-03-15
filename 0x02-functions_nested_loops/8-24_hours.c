@@ -29,8 +29,7 @@ void jack_bauer(void)
 			{
 				m1 = 0;
 				while (m1 <= 9)
-				{
-				
+				{				
 					_putchar('0' + h2);
 					_putchar('0' + h1);
 					_putchar(':');
@@ -47,7 +46,5 @@ void jack_bauer(void)
 
 		}
 		h2++;
-
-}
 
 }
