@@ -42,9 +42,9 @@ void jack_bauer(void)
 				m2++;
 
 			}
-		}
-		h1++;
+			h1++;
 
-	}
+		}
+		h2++;
 
 }
