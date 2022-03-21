@@ -8,7 +8,7 @@
  * Return: Larges of the three
  */
 
-int largest_number(iint a, int b, int c)
+int largest_number(int a, int b, int c)
 {
 	int largest;
 
