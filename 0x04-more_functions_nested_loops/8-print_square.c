@@ -2,26 +2,28 @@
 
 /**
  * print_square - prints a square, followed by a new line
- * @size: size of the square
+ * @size: size of the squar
+ * Return: Always 0 (Success)
  */
 
 void print_square(int size)
 {
-	if (size <= 0)
-	{
-		_putchar('\n');
-	}
-	else
-	{
-		int i, j;
+	int x, y;
 
-		for (i = 0; i < size; i++)
+	if (size > 0)
+	{
+		for (x = 1; x <= size; x++)
 		{
-			for (j = 0; j < size; j++)
+			for (y = 1; y <= size; y++)
 			{
 				_putchar('#');
 			}
 			_putchar('\n');
 		}
 	}
+	else
+	{
+		_putchar('\n');
+	}
 }
+
