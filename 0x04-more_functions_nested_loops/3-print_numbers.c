@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * print_numbers - print numbers 0 to 9, followed by new lin
- *Return: Always 0 (Success)
+ * print_numbers - print numbers 0 to 9, followed by new line
+ * Return: Always 0 (Success)
  */
 
-void print_number(void)
+void print_numbers(void)
 {
 	int i;
 
