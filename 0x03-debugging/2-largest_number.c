@@ -6,11 +6,12 @@
  * @a: first integer
  * @b: second integer
  * @c: third integer
- * Return: Larges of the three
+ * Return: Largest of the three
  */
 
 int largest_number(int a, int b, int c)
 {
+	int a, b, c;
 	int largest;
 
 	if (a >= b && a >= c)
