@@ -23,7 +23,7 @@ char *cap_string(char *)
 		{
 			if (s[i] == spe[j])
 			{
-				if (s[i + 1] >= 'a' 7& s[i + 1] <= 'z')
+				if (s[i + 1] >= 'a' && s[i + 1] <= 'z')
 				{
 					s[i + 1] -= 32;
 				}
