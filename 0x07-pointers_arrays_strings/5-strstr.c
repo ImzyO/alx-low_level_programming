@@ -1,9 +1,11 @@
 #include "main.h"
 
+#include <stdio.h>
+
 /**
  * _strstr - locates a substring
- * @haystack: buffer
- * @needle: buffer 2
+ * @haystack: string to search in
+ * @needle: substring to look for
  *
  * Return: pointer to beginning of substring, NULL otherwise
  */
