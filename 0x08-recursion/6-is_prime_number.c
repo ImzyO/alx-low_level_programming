@@ -1,20 +1,20 @@
 #include "main.h"
 
 /**
- * actual_prime - state if integer is prime number or not
+ * prime_a - state if integer is prime number or not
  * @a: number to evaluate
  * @b: iterator
  *
  * Return: Always 0 (Success)
  */
 
-int actual_prime(int a, int b)
+int prime_a(int a, int b)
 {
 	if (a <= 1 || (a != b && a % b == 0))
 	{
 		return (0);
 	}
-	else f (a == b)
+	else if (a == b)
 	{
 		return (1);
 	}
