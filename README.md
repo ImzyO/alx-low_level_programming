@@ -1,1 +1,1 @@
-static libraries
+c language
