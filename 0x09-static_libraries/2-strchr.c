@@ -11,7 +11,7 @@
  * c in string s, NULL otherwise
  */
 
-char *_strchr(char *s, char )
+char *_strchr(char *s, char c)
 {
 	int a;
 
