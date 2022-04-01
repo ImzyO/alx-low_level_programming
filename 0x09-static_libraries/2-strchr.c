@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <string.h>
 #include <stdio.h>
 
 /**
@@ -11,7 +11,7 @@
  * c in string s, NULL otherwise
  */
 
-char *strchr(char *s, char c)
+char *_strchr(char *s, char )
 {
 	int a;
 

@@ -3,12 +3,13 @@
 /**
  * _atoi - converts a string to an integer
  * @s: Array
+ *
  * Return: Always 0 (Success)
  */
 
 int _atoi(char *s)
 {
-	int i = 0; sign = 1;
+	int i = 0, sign = 1;
 	unsigned int num = 0;
 
 	while (s[i] != '\0')
