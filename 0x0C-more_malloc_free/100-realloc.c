@@ -11,7 +11,7 @@
  * Return: pointer to new memory
  */
 
-void *_realloc(coid *s, unsigned int old_size, unsigned int new_size)
+void *_realloc(void *s, unsigned int old_size, unsigned int new_size)
 {
 	char *str;
 	char *ptr = s;
