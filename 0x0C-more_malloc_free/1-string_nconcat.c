@@ -1,58 +1,59 @@
 #include "main.h"
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
- * _strlen - function returns the length of a string
- * @s: s is a string
+ * _strlen - find length of a string
+ * @s: string
  *
- * Return: length of string s
+ * Return: int
  */
 
-int _strlen(char *s)
+unsigned int _strlen(char *s)
 {
-	int i;
+	unsigned int size = 0;
 
-	for (i = 0; s[i] != '\0'; i++);
+	for (; s[size] != '\0'; size ++);
 
-	return (i);
+	return (size);
 }
 
-/** string_nconcat - function that concatenates two strings,adjoin
- * @s1: string s1
- * @s2: string s2
- * @n: bytes of s2
+/**
+ * string_nconcat - concatenates two string
+ * @s1: string 1
+ * @s2: string 2
+ * @n: first bytes of s2 to be used
  *
- * Return: Null if function fails, pointer otherwise
+ * Return: pointer or NULL
  */
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *str;
-	unsigned int l, t, i;
+	unnsigned int i, j;
+
+	char *m;
 
 	if (s1 == NULL)
 		s1 = "";
+
 	if (s2 == NULL)
-		s2 = "";
+		s2 == "";
 
-	t = _strlen(s1);
-	l = _strlen(s2);
-	if (n < 1)
-		l = n;
+	if (n < _strlen(s2))
+		m = malloc(_strlen(s1) + n * sizeof(char) + 1);
+	else
+		m = malloc(_strlen(s1) + _strlen(s2) + 1);
 
-	str = malloc(t + l + 1);
-
-	if (str == NULL)
-	{
+	if (m == 0)
 		return (NULL);
-	}
 
-	for (i = 0; i < t; i++)
-		*(str + i) = *(s1 + i);
+	for (i = 0; s1[i] != '\0'; i++)
+		m[i] = s1[i];
 
-	for (i = 0; i < l; i++)
-		*(str + (i + t)) = *(s2 + i);
-	*(str + (i + t)) = '\0';
-	return (str);
+	for (j = 0; s2[j] != '\0' && j < n; i++, j++)
+		m[i] = s2[j];
+
+	m[i] = '\0';
+
+	return (m);
 }
