@@ -11,9 +11,9 @@
 
 unsigned int _strlen(char *s)
 {
-	unsigned int size = 0;
+	unsigned int size;
 
-	for (; s[size] != '\0'; size ++);
+	for (s[size] != '\0'; size ++);
 
 	return (size);
 }
@@ -29,7 +29,7 @@ unsigned int _strlen(char *s)
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unnsigned int i, j;
+	unsigned int i, j;
 
 	char *m;
 
@@ -37,7 +37,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s1 = "";
 
 	if (s2 == NULL)
-		s2 == "";
+		s2 = "";
 
 	if (n < _strlen(s2))
 		m = malloc(_strlen(s1) + n * sizeof(char) + 1);
