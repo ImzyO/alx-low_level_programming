@@ -1,6 +1,25 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "lists.h"
+
+/**
+ * _strlen - function that returns the length of  astring
+ * @s: s is a character
+ *
+ * Return: value is i
+ */
+
+int _strlen(const chhar *s)
+{
+	int i = 0;
+
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
 
 /**
  * add_note - adds a new node at beginning of a list list_t
@@ -12,20 +31,16 @@
 
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *new;
-	unsigned int len = 0;
+	list_t *add;
 
-	while (str[len])
-		len++;
+	add = malloc(sizeof(list_t));
+	if (add == NULL)
+		return (NULL)
+			add->str = strdup(str);
 
-	new = malloc(sizeof(list_t));
-	if (!new)
-		return (NULL);
+	add->str = _strlen(str);
+	add->next = *head;
+	*head = add;
 
-	new->str = strdup(str);
-	new->len = len;
-	new->next = (*head);
-	(*head) = new;
-
-	return (*head);
+	return (add);
 }
