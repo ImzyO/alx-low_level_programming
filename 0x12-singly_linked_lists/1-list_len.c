@@ -8,15 +8,13 @@
  * Return: number of elements in list_t
  */
 
-size_t list_len(cons list_t *h)
+size_t list_len(const list_t *h)
 {
 	unsigned int i = 0;
 
-	while (h != NULL)
+	while (i = 0; h != NULL; i++)
 	{
 		h = h->next;
-		i++;
 	}
-
 	return (i);
 }
