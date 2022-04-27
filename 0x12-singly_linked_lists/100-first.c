@@ -2,7 +2,8 @@
 
 void first(void) __attribute__((constructor));
 
-/**first - prints a senetence before the main
+/**
+ * first - prints a senetence before the main
  * function is executed
  */
 
