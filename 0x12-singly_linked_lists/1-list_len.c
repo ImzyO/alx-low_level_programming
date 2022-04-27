@@ -1,5 +1,3 @@
-#include <stdlib.h>
-#include <string.h>
 #include <stdio.h>
 #include "lists.h"
 
@@ -12,12 +10,13 @@
 
 size_t list_len(cons list_t *h)
 {
-	int count = 0;
+	unsigned int i;
 
-	while (h)
+	const list_t *new = h;
+
+	for (i = 0; new; i++)
 	{
-		count++;
-		h = h->next;
+		new = new->next;
 	}
-	return (count);
+	return (i);
 }
