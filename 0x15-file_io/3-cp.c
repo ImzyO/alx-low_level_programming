@@ -47,7 +47,7 @@ int main(int ac, char *av[])
 	if (istatus == -1)
 		dprintf(SE, "Error: Can't close fd %d\n", input_fd), exit(100);
 	ostatus = close(output_fd);
-	if (Ostatus == -1)
+	if (ostatus == -1)
 		dprintf(SE, "Error: Can't close fd %d\n", output_fd), exit(100);
 
 	return (0);
