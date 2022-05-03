@@ -1,6 +1,4 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 /**
  * read_textfile - reads a text file and prints it to the
@@ -22,7 +20,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (filename == NULL)
 		return (0);
 
-	file = open(filename, o_RDWR);
+	file = open(filename, O_RDWR);
 	if (file == -1)
 		return (0);
 
