@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * read_textfile - reads a text file and prints it to the
@@ -12,40 +14,32 @@
  */
 
 ssize_t read_textfile(const char *filename, size_t letters)
-
 {
-	int fd;
-	int s, t;
-	char *buf;
+	int fd, n_read, n_write;
+	char *s;
 
-	if (!filename)
+	if (filename == NULL)
 		return (0);
 
-	fd = open(filename, 0_RDONLY);
-	if (fd < 0)
+	s = malloc(letters * sizeof(char) + 1);
+	if (!s)
 		return (0);
-
-	buf = malloc(sizeof(char) * letters);
-	if (!buf)
-		return (0);
-
-	s = read(fd, buf, letters);
-	if (s < 0)
+	fd = open(filename, O_RDONLY);
+	if (fd == -1)
 	{
-		free(buf);
+		free(s);
 		return (0);
 	}
-	buf[s] = '\0';
-
+	n_read = read(fd, s, letters);
+	if (n_read == -1)
+	{
+		free(s);
+		return (0);
+	}
+	n_write = write(STDOUT_FILENO, s, n_read);
 	clode(fd);
-
-	t = write(STDOUT_FILENO, buf, s);
-	if (t < 0)
-	{
-		free(buf);
-		return (0);
-	}
-
-	free(buf);
-	return (t);
+	free(s);
+	if (n_read == n_write)
+		return (n_write);
+	return (0);
 }
