@@ -13,7 +13,7 @@
 
 list_t *add_node_end(list_t **head, const char *str)
 {
-	lis_t *current;
+	list_t *current;
 	list_t *new_node;
 	int c;
 
