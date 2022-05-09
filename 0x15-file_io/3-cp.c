@@ -28,8 +28,7 @@ int main(int ac, char *av[])
 	if (output_fd == -1)
 		dprintf(SE, "Error: Can't write to %s\n", av[2]), exit(99);
 
-	do
-       	{
+	do {
 		istatus = read(input_fd, buf, MAXSIZE);
 		if (istatus == -1)
 		{
@@ -42,8 +41,7 @@ int main(int ac, char *av[])
 			if (ostatus == -1)
 				dprintf(SE, "Error: Can't write to %s\n", av[2]), exit(99);
 		}
-	} 
-	while (istatus > 0);
+	} while (istatus > 0);
 
 	istatus = close(input_fd);
 	if (istatus == -1)
