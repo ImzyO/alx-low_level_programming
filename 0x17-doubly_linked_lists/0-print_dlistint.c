@@ -10,13 +10,15 @@
 
 size_t print_dlistint(const dlistint_t *h);
 {
-	size_t k;
+	size_t nbr_nodes = 0;
+	const dlistint_t *current = h;
 
-	for (k = 0; h != NULL; k++)
+	while (current != NULL)
 	{
-		printf("%d\n", h->n);
-		h = h->next;
+		printf("%i\n", current->n);
+		current = current->next;
+		nbr_nodes++;
 	}
 
-	return (k);
+	return (nbr_nodes);
 }
