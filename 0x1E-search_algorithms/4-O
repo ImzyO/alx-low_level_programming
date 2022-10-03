@@ -1,0 +1,2 @@
+/**the time complexity (worst case) of a binary search in an array of size n*/
+O(log(n))
