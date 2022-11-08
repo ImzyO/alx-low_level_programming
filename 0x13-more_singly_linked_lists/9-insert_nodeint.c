@@ -1,5 +1,4 @@
 #include "lists.h"
-#include <stdlib.h>
 
 /**
  * insert_nodeint_at_index - inserts a new node at a certain index in the list
@@ -12,45 +11,39 @@
  
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-        listint_t *previous;
-        listint_t *new;
-        unsigned int i = 0;
-        
-        if (head == NULL)
-                return (0);
-        new = malloc(sizeof(listint_t));
-        if (new == NULL)
-                return (0);
-        new->n = n;
-        previous = *head;
-        if (*head == NULL && idx != 0)
-                {
-                        return (0);
-                }
-        else if (idx == 0)
-                {
-                        new->next = *head;
-                        *head = new;
-                        return (new);
-                }
-        else if (idx == 1)
-                {
-                        new->next = (*head)->next;
-                        (*head)->next = new;
-                        return (new);
-                }
-        while (i < (idx - 1))
-                {
-                        previous = previous->next;
-                        i++;
-                        if (!previous)
-                {
-                        free(new);
-                        return (0);
-                }
+        listint_t *new_node, *trav;
+	unsigned int i = 0;
 
-        new->next = previous->next;
-        previous->next = new;
+	if (head == NULL)
+		return (NULL);
 
-        return (new);
+	/* create the new node */
+	new_node = malloc(sizeof(listint_t));
+	if (new_node == NULL)
+		return (NULL);
+
+	new_node->n = n;
+
+	if (idx == 0)
+	{
+		new_node->next = *head;
+		*head = new_node;
+		return (new_node);
+	}
+
+	trav = *head;
+	while (i != idx - 1 && trav != NULL)
+	{
+		trav = trav->next;
+		i++;
+	}
+
+	if (i == idx - 1 && trav != NULL)
+	{
+		new_node->next = trav->next;
+		trav->next = new_node;
+		return (new_node);
+	}
+
+	return (NULL);
 }
